@@ -4,7 +4,7 @@
     "modulos": [
       {
         "nombre": "MÓDULO I_ TALLER DE SISTEMAS OPERATIVOS I",
-        "imagen": "../0. IMAGENES/MÓDULO I_ TALLER DE SISTEMAS OPERATIVOS I_COMPLETO.png",
+        "imagen": "imagenes_modulos/modulo_i__taller_de_sistemas_operativos_i_completo.png",
         "temas": [
           {
             "pdf": "pdfs/1. TÉCNICO BÁSICO, 1er Semestre/1. MÓDULO I_ TALLER DE SISTEMAS OPERATIVOS I/TEMA 1. Introducción a los sistemas operativos.pdf",
@@ -42,7 +42,7 @@
       },
       {
         "nombre": "MÓDULO II_ MATEMÁTICA PARA LA INFORMÁTICA",
-        "imagen": "../0. IMAGENES/MÓDULO II_ MATEMÁTICA PARA LA INFORMÁTICA_COMPLETO.png",
+        "imagen": "imagenes_modulos/modulo_ii__matematica_para_la_informatica_completo.png",
         "temas": [
           {
             "pdf": "pdfs/1. TÉCNICO BÁSICO, 1er Semestre/2. MÓDULO II_ MATEMÁTICA PARA LA INFORMÁTICA/TEMA 1. Fundamentos y Sistemas de Numeración.pdf",
@@ -80,7 +80,7 @@
       },
       {
         "nombre": "MÓDULO III_ PROGRAMACIÓN I-A",
-        "imagen": "../0. IMAGENES/MÓDULO III_ PROGRAMACIÓN I_COMPLETO.png",
+        "imagen": "imagenes_modulos/modulo_iii__programacion_i_completo.png",
         "temas": [
           {
             "pdf": "pdfs/1. TÉCNICO BÁSICO, 1er Semestre/3. MÓDULO III_ PROGRAMACIÓN I-A/TEMA 1. Diseño de algoritmos.pdf",
@@ -118,7 +118,7 @@
       },
       {
         "nombre": "MÓDULO IV_ HARDWARE DE COMPUTADORAS I",
-        "imagen": "../0. IMAGENES/MÓDULO IV_ HARDWARE DE COMPUTADORAS I_COMPLETO.png",
+        "imagen": "imagenes_modulos/modulo_iv__hardware_de_computadoras_i_completo.png",
         "temas": [
           {
             "pdf": "pdfs/1. TÉCNICO BÁSICO, 1er Semestre/4. MÓDULO IV_ HARDWARE DE COMPUTADORAS I/TEMA 1. Evolución y generación de computadoras.pdf",
@@ -156,7 +156,7 @@
       },
       {
         "nombre": "MÓDULO V_ EMERGENTE I (INTELIGENCIA ARTIFICIAL BÁSICA)",
-        "imagen": "../0. IMAGENES/MÓDULO V_ EMERGENTE I _INTELIGENCIA ARTIFICIAL BÁSICA__COMPLETO.png",
+        "imagen": "imagenes_modulos/modulo_v__emergente_i__inteligencia_artificial_basica__completo.png",
         "temas": [
           {
             "pdf": "pdfs/1. TÉCNICO BÁSICO, 1er Semestre/5. MÓDULO V_ EMERGENTE I (INTELIGENCIA ARTIFICIAL BÁSICA)/TEMA 1. Fundamentos de la Inteligencia Artificial.pdf",
@@ -199,7 +199,7 @@
     "modulos": [
       {
         "nombre": "MÓDULO VI_ TALLER DE SISTEMAS OPERATIVOS II",
-        "imagen": "../0. IMAGENES/MÓDULO VI_ TALLER DE SISTEMAS OPERATIVOS II_COMPLETO.png",
+        "imagen": "imagenes_modulos/modulo_vi__taller_de_sistemas_operativos_ii_completo.png",
         "temas": [
           {
             "pdf": "pdfs/2. TÉCNICO AUXILIAR, 2do Semestre/1. MÓDULO VI_ TALLER DE SISTEMAS OPERATIVOS II/TEMA 1. Administración plataforma Linux.pdf",
@@ -237,7 +237,7 @@
       },
       {
         "nombre": "MÓDULO VII_ OFIMÁTICA Y TECNOLOGÍA MULTIMEDIA I",
-        "imagen": "../0. IMAGENES/MÓDULO VII_ OFIMÁTICA Y TECNOLOGÍA MULTIMEDIA I_COMPLETO.png",
+        "imagen": "imagenes_modulos/modulo_vii__ofimatica_y_tecnologia_multimedia_i_completo.png",
         "temas": [
           {
             "pdf": "pdfs/2. TÉCNICO AUXILIAR, 2do Semestre/2. MÓDULO VII_ OFIMÁTICA Y TECNOLOGÍA MULTIMEDIA I/TEMA 1. Procesador de texto avanzado.pdf",
@@ -275,7 +275,7 @@
       },
       {
         "nombre": "MÓDULO VIII_ PROGRAMACIÓN I-B",
-        "imagen": "../0. IMAGENES/MÓDULO VIII_ PROGRAMACIÓN II_COMPLETO.png",
+        "imagen": "imagenes_modulos/modulo_viii__programacion_ii_completo.png",
         "temas": [
           {
             "pdf": "pdfs/2. TÉCNICO AUXILIAR, 2do Semestre/3. MÓDULO VIII_ PROGRAMACIÓN I-B/TEMA 1. Estructuras Iterativas (Bucles).pdf",
@@ -313,7 +313,7 @@
       },
       {
         "nombre": "MÓDULO IX_ HARDWARE DE COMPUTADORAS II",
-        "imagen": "../0. IMAGENES/MÓDULO IX_ HARDWARE DE COMPUTADORAS II_COMPLETO.png",
+        "imagen": "imagenes_modulos/modulo_ix__hardware_de_computadoras_ii_completo.png",
         "temas": [
           {
             "pdf": "pdfs/2. TÉCNICO AUXILIAR, 2do Semestre/4. MÓDULO IX_ HARDWARE DE COMPUTADORAS II/TEMA 1. Software de mantenimiento e imágenes de sistema.pdf",
@@ -351,7 +351,7 @@
       },
       {
         "nombre": "MÓDULO X_ EMERGENTE II (PROMPTS BÁSICOS)",
-        "imagen": "../0. IMAGENES/MÓDULO X_ EMERGENTE II _PROMPTS BÁSICOS__COMPLETO.png",
+        "imagen": "imagenes_modulos/modulo_x__emergente_ii__prompts_basicos__completo.png",
         "temas": [
           {
             "pdf": "pdfs/2. TÉCNICO AUXILIAR, 2do Semestre/5. MÓDULO X_ EMERGENTE II (PROMPTS BÁSICOS)/TEMA 1. Fundamentos de Prompts.pdf",
@@ -394,7 +394,7 @@
     "modulos": [
       {
         "nombre": "MÓDULO XI_ INGLÉS TÉCNICO",
-        "imagen": "../0. IMAGENES/MÓDULO XI_ INGLÉS TÉCNICO_COMPLETO.png",
+        "imagen": "imagenes_modulos/modulo_xi__ingles_tecnico_completo.png",
         "temas": [
           {
             "pdf": "pdfs/3. TÉCNICO MEDIO I,3er Semestre/1. MÓDULO XI_ INGLÉS TÉCNICO/TEMA 1. Estructuras Gramaticales y Entorno Personal.pdf",
@@ -432,7 +432,7 @@
       },
       {
         "nombre": "MÓDULO XII_ DISEÑO Y PROGRAMACIÓN WEB I-A",
-        "imagen": "../0. IMAGENES/MÓDULO XII_ DISEÑO Y PROGRAMACIÓN WEB I_COMPLETO.png",
+        "imagen": "imagenes_modulos/modulo_xii__diseo_y_programacion_web_i_completo.png",
         "temas": [
           {
             "pdf": "pdfs/3. TÉCNICO MEDIO I,3er Semestre/2. MÓDULO XII_ DISEÑO Y PROGRAMACIÓN WEB I-A/TEMA 1. Introducción al diseño web.pdf",
@@ -470,7 +470,7 @@
       },
       {
         "nombre": "MÓDULO XIII_ PROGRAMACIÓN I-C",
-        "imagen": "../0. IMAGENES/MÓDULO XIII_ PROGRAMACIÓN III_COMPLETO.png",
+        "imagen": "imagenes_modulos/modulo_xiii__programacion_iii_completo.png",
         "temas": [
           {
             "pdf": "pdfs/3. TÉCNICO MEDIO I,3er Semestre/3. MÓDULO XIII_ PROGRAMACIÓN I-C/TEMA 1. Programación Orientada a Objetos (POO Avanzada).pdf",
@@ -508,7 +508,7 @@
       },
       {
         "nombre": "MÓDULO XIV_ OFIMÁTICA Y TECNOLOGÍA MULTIMEDIA II",
-        "imagen": "../0. IMAGENES/MÓDULO XIV_ OFIMÁTICA Y TECNOLOGÍA MULTIMEDIA II_COMPLETO.png",
+        "imagen": "imagenes_modulos/modulo_xiv__ofimatica_y_tecnologia_multimedia_ii_completo.png",
         "temas": [
           {
             "pdf": "pdfs/3. TÉCNICO MEDIO I,3er Semestre/4. MÓDULO XIV_ OFIMÁTICA Y TECNOLOGÍA MULTIMEDIA II/TEMA 1. Edición de audio digital.pdf",
@@ -546,7 +546,7 @@
       },
       {
         "nombre": "MÓDULO XV_ EMPRENDIMIENTO PRODUCTIVO E IA APLICADA",
-        "imagen": "../0. IMAGENES/MÓDULO XV_ EMPRENDIMIENTO PRODUCTIVO E IA APLICADA_COMPLETO.png",
+        "imagen": "imagenes_modulos/modulo_xv__emprendimiento_productivo_e_ia_aplicada_completo.png",
         "temas": [
           {
             "pdf": "pdfs/3. TÉCNICO MEDIO I,3er Semestre/5. MÓDULO XV_ EMPRENDIMIENTO PRODUCTIVO E IA APLICADA/TEMA 1. Emprendimiento Productivo en Tecnología.pdf",
@@ -589,7 +589,7 @@
     "modulos": [
       {
         "nombre": "MÓDULO XVI_ REDES DE COMPUTADORAS I",
-        "imagen": "../0. IMAGENES/MÓDULO XVI_ REDES DE COMPUTADORAS_COMPLETO.png",
+        "imagen": "imagenes_modulos/modulo_xvi__redes_de_computadoras_completo.png",
         "temas": [
           {
             "pdf": "pdfs/4. TÉCNICO MEDIO II, 4to Semestre/1. MÓDULO XVI_ REDES DE COMPUTADORAS I/TEMA 1. Fundamentos y Topologías de Red.pdf",
@@ -627,7 +627,7 @@
       },
       {
         "nombre": "MÓDULO XVII_ DISEÑO Y PROGRAMACIÓN WEB I-B",
-        "imagen": "../0. IMAGENES/MÓDULO XVII_ DISEÑO Y PROGRAMACIÓN WEB II_COMPLETO.png",
+        "imagen": "imagenes_modulos/modulo_xvii__diseo_y_programacion_web_ii_completo.png",
         "temas": [
           {
             "pdf": "pdfs/4. TÉCNICO MEDIO II, 4to Semestre/2. MÓDULO XVII_ DISEÑO Y PROGRAMACIÓN WEB I-B/TEMA 1. Programación Frontend con JavaScript.pdf",
@@ -665,7 +665,7 @@
       },
       {
         "nombre": "MÓDULO XVIII_ BASE DE DATOS I",
-        "imagen": "../0. IMAGENES/MÓDULO XVIII_ BASE DE DATOS_COMPLETO.png",
+        "imagen": "imagenes_modulos/modulo_xviii__base_de_datos_completo.png",
         "temas": [
           {
             "pdf": "pdfs/4. TÉCNICO MEDIO II, 4to Semestre/3. MÓDULO XVIII_ BASE DE DATOS I/TEMA 1. Introducción a Bases de Datos.pdf",
@@ -703,7 +703,7 @@
       },
       {
         "nombre": "MÓDULO XIX_ PROGRAMACIÓN MÓVIL I",
-        "imagen": "../0. IMAGENES/MÓDULO XIX_ PROGRAMACIÓN MÓVIL_COMPLETO.png",
+        "imagen": "imagenes_modulos/modulo_xix__programacion_movil_completo.png",
         "temas": [
           {
             "pdf": "pdfs/4. TÉCNICO MEDIO II, 4to Semestre/4. MÓDULO XIX_ PROGRAMACIÓN MÓVIL I/TEMA 1. Introducción a las Tecnologías Móviles.pdf",
@@ -741,7 +741,7 @@
       },
       {
         "nombre": "MÓDULO XX_ MODALIDADES DE GRADUACIÓN Y PROYECTO FINAL",
-        "imagen": "../0. IMAGENES/MÓDULO XX_ MODALIDADES DE GRADUACIÓN Y PROYECTO FINAL_COMPLETO.png",
+        "imagen": "imagenes_modulos/modulo_xx__modalidades_de_graduacion_y_proyecto_final_completo.png",
         "temas": [
           {
             "pdf": "pdfs/4. TÉCNICO MEDIO II, 4to Semestre/5. MÓDULO XX_ MODALIDADES DE GRADUACIÓN Y PROYECTO FINAL/TEMA 1. Reglamentación y Elección de Modalidad.pdf",
