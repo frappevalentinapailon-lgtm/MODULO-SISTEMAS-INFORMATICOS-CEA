@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -434,6 +434,16 @@ function openPdf(e, url, title) {
   let embedUrl = url;
   if (embedUrl.includes('/view')) {
     embedUrl = embedUrl.replace(/\/view.*/, '/preview');
+  } else if (embedUrl.endsWith('.pdf')) {
+    // Si es un celular, usamos el visor de Google Docs para evitar que pida descargar
+    let isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    let isLiveServer = window.location.protocol.startsWith('http') && !window.location.hostname.includes('localhost') && !window.location.hostname.includes('127.0.0.1');
+    if (isMobile && isLiveServer) {
+      let base = window.location.href.split('?')[0].split('#')[0];
+      base = base.substring(0, base.lastIndexOf('/') + 1);
+      let absoluteUrl = base + embedUrl;
+      embedUrl = 'https://docs.google.com/gview?url=' + encodeURIComponent(absoluteUrl) + '&embedded=true';
+    }
   }
   
   // Mostrar sección PDF
