@@ -1,0 +1,674 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistemas Informáticos CEA – Temas Completos para Descargar</title>
+<meta name="theme-color" content="#0ea5e9">
+<link rel="apple-touch-icon" href="images/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--a:#0ea5e9;--a2:#38bdf8;--dark:#0b0f1a;--card:#131929;--card2:#1a2338;--b:rgba(255,255,255,.08);--t:#e8eaf0;--m:rgba(255,255,255,.45);--cel:rgba(56,189,248,.13)}
+body{font-family:'Inter',sans-serif;background:var(--dark);color:var(--t);min-height:100vh;overflow-x:hidden}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.4rem 1.4rem;border-bottom:1px solid var(--b);backdrop-filter:blur(14px);background:rgba(11,15,26,.9)}
+.logo-img{height:36px;object-fit:contain}
+.btn-back{background:rgba(248,113,113,0.15);color:#f87171;padding:.3rem .8rem;border-radius:8px;font-weight:700;text-decoration:none;font-size:.75rem;transition:.2s}
+.btn-back:hover{background:rgba(248,113,113,0.25);transform:scale(1.05);}
+
+.hero{text-align:center;padding:0.5rem 1rem 1.5rem}
+.hero h1{font-size:2.2rem;font-weight:900;margin-bottom:.5rem;color:var(--t)}
+.hero p{color:var(--m);font-size:.95rem;max-width:600px;margin:0 auto}
+
+.wrap{max-width:1100px;margin:0 auto;padding:0 1rem 5rem}
+
+/* PESTAÑAS SEMESTRE - escritorio */
+.sem-tabs{display:flex;justify-content:center;flex-wrap:wrap;gap:.5rem;padding-bottom:.5rem;margin-bottom:2rem}
+.sem-btn{padding:.5rem 1.2rem;border-radius:20px;border:1.5px solid var(--b);background:var(--card);color:var(--m);cursor:pointer;font-weight:700;font-size:.8rem;transition:.3s}
+.sem-btn.active{border-color:var(--a2);color:var(--a2);background:var(--cel)}
+/* SELECT DESPLEGABLE - móvil */
+.mob-select{display:none;width:100%;padding:.7rem 1rem;border-radius:12px;border:1.5px solid var(--a2);background:var(--card2);color:var(--a2);font-weight:700;font-size:.95rem;margin-bottom:1.5rem;cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2338bdf8' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;background-color:var(--card2);padding-right:2.5rem}
+.mob-select:focus{outline:2px solid var(--a2);outline-offset:2px}
+@media(max-width:640px){
+  .sem-tabs{display:none}
+  .mob-select{display:block}
+}
+
+/* GALERÍA DE MÓDULOS */
+.mod-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+@media(min-width: 640px) { .mod-grid { grid-template-columns: repeat(2, 1fr); } }
+@media(min-width: 900px) { .mod-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.mod-card {
+  background: var(--card2);
+  border: 1px solid var(--b);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.mod-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--a);
+  box-shadow: 0 0 40px rgba(14,165,233,0.5);
+}
+
+.mod-cover {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: var(--card2);
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+  .mod-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: transparent;
+    transition: transform 0.4s;
+  }
+.mod-cover:hover img {
+  transform: scale(1.03);
+}
+.mod-cover::after {
+  content: '👀 Ver temas del módulo';
+  position: absolute;
+  inset: 0;
+  background: rgba(11,15,26,0.85);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  backdrop-filter: blur(2px);
+}
+.mod-cover:hover::after {
+  opacity: 1;
+}
+
+.mod-info {
+  padding: 1.2rem;
+  flex: 1;
+  text-align: center;
+}
+.mod-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--t);
+  line-height: 1.4;
+}
+
+/* MODALES A PANTALLA COMPLETA */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--dark);
+  z-index: 1000;
+  flex-direction: column;
+  animation: fadeIn 0.3s;
+}
+.modal-overlay.open {
+  display: flex;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-content {
+  background: var(--dark);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--b);
+  background: rgba(11,15,26,0.95);
+}
+.modal-title {
+  color: var(--t);
+  font-weight: 900;
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+.btn-close {
+  background: rgba(248,113,113,0.15);
+  color: #f87171;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 800;
+  transition: 0.2s;
+}
+.btn-close:hover {
+  background: rgba(248,113,113,0.25);
+  transform: scale(1.05);
+}
+
+.modal-body {
+  padding: 2rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* TEMAS GRID */
+.themes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+.theme-card {
+  background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+.theme-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: var(--a);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+.theme-card:hover {
+  transform: translateY(-8px);
+  background: linear-gradient(145deg, rgba(14,165,233,0.1), rgba(14,165,233,0.02));
+  border-color: rgba(14,165,233,0.3);
+  box-shadow: 0 0 35px rgba(14,165,233,0.4);
+}
+.theme-card:hover::before {
+  transform: scaleX(1);
+}
+.theme-icon {
+  font-size: 3rem;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+  transition: 0.3s;
+  animation: float 3s ease-in-out infinite;
+}
+.theme-card:hover .theme-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+.theme-name {
+  color: var(--t);
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* PDF CONTAINER */
+.pdf-container {
+  width: 100%;
+  height: 70vh;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.pdf-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+  .mat-btn-new {
+    display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;
+    cursor: pointer; transition: all 0.2s; padding: 0.5rem 0.2rem;
+  }
+  .mat-btn-new:hover { transform: translateY(-3px); background: rgba(255,255,255,0.15); box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+  .mat-btn-new img { width: 32px; height: 32px; object-fit: contain; margin-bottom: 6px; }
+  .mat-btn-new span { font-size: 0.65rem; color: #eee; font-weight: 600; text-align: center; line-height: 1.1; }
+/* GRID DE MATERIALES (3 por fila) */
+.theme-resources { display: grid; grid-template-columns: 1fr; gap: 1.5rem; padding: 1rem 0; }
+@media(min-width: 640px) { .theme-resources { grid-template-columns: repeat(2, 1fr); } }
+@media(min-width: 1024px) { .theme-resources { grid-template-columns: repeat(3, 1fr); } }
+
+/* RESPONSIVE TEMA TABS */
+.tema-tabs-desk {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.8rem; margin-bottom: 1rem; border-bottom: 1px solid var(--b); padding-bottom: 1rem;
+}
+.tema-select-mob {
+  display: none; width: 100%; padding: 0.7rem 1rem; border-radius: 12px; border: 1.5px solid var(--a2); background: var(--card2); color: var(--a2); font-weight: 700; font-size: 0.95rem; margin-bottom: 1.5rem; cursor: pointer; -webkit-appearance: none; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2338bdf8' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem;
+}
+.tema-select-mob:focus { outline: 2px solid var(--a2); outline-offset: 2px; }
+@media(max-width: 768px) {
+  .tema-tabs-desk { display: none; }
+  .tema-select-mob { display: block; }
+}
+
+/* ANIMACIONES GENERALES */
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+</style>
+</head>
+<body>
+
+<header style="position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.8rem 1.2rem;border-bottom:1px solid var(--b);backdrop-filter:blur(14px);background:rgba(11,15,26,.92)">
+  <div style="display:flex;align-items:center;gap:1rem;">
+      <div class="hdr-name" id="hdr-name" style="font-size:1.1rem;font-weight:800;color:var(--t);text-transform:uppercase;">ESTUDIANTE</div>
+      <div class="hdr-badge" id="hdr-badge" style="background:var(--a);color:#fff;padding:.3rem .8rem;border-radius:20px;font-size:.75rem;font-weight:800;">🎯 Básico</div>
+  </div>
+  <div style="display:flex;align-items:center;gap:1rem;">
+      <button class="btn-back" id="btn-back-temas" onclick="closePdfView()" style="display:none; background:rgba(248,113,113,0.15); color:#f87171; border:none; cursor:pointer;">⬅ Volver a Temas</button>
+      <button class="btn-out" id="btn-back-inicio" style="background:rgba(248,113,113,.1);color:#f87171;border:1px solid rgba(248,113,113,.3);padding:.4rem 1rem;border-radius:16px;cursor:pointer;font-weight:700;font-size:.85rem;">⬅ Volver al Portal</button>
+  </div>
+</header>
+
+<div id="main-content-section">
+<div class="hero">
+  <h1>Materiales de Estudio</h1>
+  <p>Accede a todos los materiales de tus temas (PDF, Presentaciones, Audios y Videos). Selecciona tu semestre y haz clic en la carátula de un módulo para comenzar.</p>
+</div>
+
+<div class="wrap">
+  <div class="sem-tabs" id="sem-tabs"></div>
+  <select class="mob-select" id="sem-select" onchange="switchSem(this.value, null)"></select>
+  <div class="mod-grid" id="mods-area">
+    <p style="text-align:center;color:var(--m);grid-column: 1/-1;">Cargando...</p>
+  </div>
+</div>
+</div> <!-- End main-content-section -->
+
+<!-- PDF VIEW SECTION (Matches Minedu Screenshot exactly, but fixed screen) -->
+<div id="pdf-view-section" style="display: none; background: #fff; height: calc(100vh - 50px); width: 100%; position: fixed; top: 50px; left: 0; z-index: 50; flex-direction: column;">
+  
+  <!-- Native PDF Viewer Iframe -->
+  <iframe id="pdf-frame-full" src="" style="width: 100%; height: 100%; flex: 1; border: none; background: #fff; display: block; z-index: 1;"></iframe>
+</div>
+
+<!-- AUDIO VIEW SECTION (Beautiful custom player) -->
+<div id="audio-view-section" style="display: none; background: linear-gradient(135deg, #0f172a, #1e293b); height: calc(100vh - 50px); width: 100%; position: fixed; top: 50px; left: 0; z-index: 50; flex-direction: column; align-items: center; justify-content: center;">
+  <div style="background: rgba(255,255,255,0.05); padding: 2.5rem 2rem; border-radius: 30px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(20px); text-align: center; max-width: 380px; width: 90%; box-shadow: 0 20px 50px rgba(0,0,0,0.6);">
+    <div style="width: 220px; height: 220px; margin: 0 auto 2rem; border-radius: 50%; overflow: hidden; border: 5px solid var(--card2); box-shadow: 0 10px 30px rgba(0,0,0,0.5); animation: spin 15s linear infinite;" id="audio-spin-container">
+      <img id="audio-cover" src="images/Audio.png" onerror="this.src='images/sistemas.png'" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <h2 id="audio-title" style="color: #fff; font-size: 1.4rem; margin-bottom: 0.5rem; line-height: 1.4; font-weight: 800;">Tema Audio</h2>
+    <p style="color: var(--a2); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">🎧 Audio Explicativo</p>
+    <div style="border-radius: 20px; overflow: hidden; height: 80px; width: 100%; position: relative; background: #000;">
+      <iframe id="custom-audio-player" src="" style="width: 100%; height: 100%; border: none; display: block;"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 1: Temas del Módulo -->
+<div class="modal-overlay" id="themes-modal">
+  <div class="modal-content" style="display: flex; flex-direction: column; width: 99%; max-width: 1920px; height: 98vh; max-height: 98vh;">
+    <div class="modal-header">
+      <div class="modal-title" id="themes-title">Temas del Módulo</div>
+      <button class="btn-close" onclick="closeThemes()" id="btn-close-themes">⬅ Volver a Módulos</button>
+    </div>
+    <div class="modal-body" id="themes-container">
+    </div>
+  </div>
+</div>
+
+<script src="js/caratulas_db.js"></script>
+<script>
+let currentSemIdx = 0;
+let student_DB = [];
+let NIVEL = "Básico";
+
+function resolvePath(p) {
+  if (!p) return '';
+  if (p.startsWith('http')) return p;
+  let res = p.startsWith('../') ? p : p;
+  return encodeURI(res).replace(/%20/g, ' '); 
+}
+
+function detectarNivel(s) {
+  const low = s.toLowerCase();
+  if (low.includes('todo')) return 'Todos';
+  if (low.includes('ingenier')) return 'Ingeniería';
+  if (low.includes('superior')) return 'Superior';
+  if (low.includes('medio'))    return 'Medio';
+  if (low.includes('auxiliar')) return 'Auxiliar';
+  return 'Básico';
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const u = JSON.parse(localStorage.getItem('user') || '{}');
+
+  const nombre = (u.nombre || 'Visitante').split(' ')[0].toUpperCase();
+  document.getElementById('hdr-name').textContent = nombre;
+  
+  const nivelVisual = u.nivel_asignado || 'No asignado';
+  document.getElementById('hdr-badge').textContent = `🎯 ${nivelVisual}`;
+  NIVEL = detectarNivel(nivelVisual);
+
+  document.getElementById('btn-back-inicio').addEventListener('click', () => {
+    window.location.replace('index.html');
+  });
+
+  // Visitantes / Tercer Grupo ven todos los niveles sin restricciones
+  if (typeof CARATULAS_DB !== 'undefined') {
+    student_DB = CARATULAS_DB;
+  }
+
+  renderTabs();
+  renderMods();
+});
+
+function renderTabs() {
+  const tabsEl = document.getElementById('sem-tabs');
+  const sel = document.getElementById('sem-select');
+  tabsEl.innerHTML = student_DB.map((sem, i) => `
+    <button class="sem-btn ${i===0?'active':''}" onclick="switchSem(${i}, this)">
+      ${sem.nombre.split(' – ')[0] || sem.nombre}
+    </button>
+  `).join('');
+  sel.innerHTML = student_DB.map((sem, i) =>
+    `<option value="${i}">${sem.nombre.split(' – ')[0] || sem.nombre}</option>`
+  ).join('');
+}
+
+function switchSem(idx, btn) {
+  idx = parseInt(idx);
+  document.querySelectorAll('.sem-btn').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  const sel = document.getElementById('sem-select');
+  if (sel) sel.value = idx;
+  currentSemIdx = idx;
+  renderMods();
+}
+
+function renderMods() {
+  const area = document.getElementById('mods-area');
+  const sem = student_DB[currentSemIdx];
+  
+  if (!sem || !sem.modulos || sem.modulos.length === 0) {
+    area.innerHTML = `<p style="text-align:center;color:var(--m);grid-column:1/-1;">No hay módulos para este semestre aún.</p>`;
+    return;
+  }
+
+  area.innerHTML = sem.modulos.map((mod, mi) => {
+    let num = "";
+    let titulo = mod.nombre;
+    if (mod.nombre.includes('_')) {
+      const parts = mod.nombre.split('_');
+      num = parts[0].trim();
+      titulo = parts.slice(1).join('_').trim();
+    }
+    
+    return `
+      <div class="mod-card" style="animation: slideUpFade 0.6s ease-out forwards; opacity: 0; animation-delay: ${mi * 0.1}s; border-radius: 20px; overflow: hidden; border: 1px solid var(--b); background: linear-gradient(145deg, var(--card2), var(--card)); transition: transform 0.3s; cursor: pointer;" onclick="openThemes(${currentSemIdx}, ${mi})" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='none'">
+        <div class="mod-cover" style="height: auto; width: 100%;">
+          ${mod.imagen ? `<img src="${resolvePath(mod.imagen)}" alt="Carátula" loading="lazy" style="width: 100%; display: block;">` : `<div style="width:100%;height:300px;display:flex;align-items:center;justify-content:center;color:var(--m)">Sin Imagen</div>`}
+        </div>
+      </div>
+  `}).join('');
+}
+
+function openThemes(semIdx, modIdx) {
+  const mod = student_DB[semIdx].modulos[modIdx];
+  
+  let num = "";
+  let titulo = mod.nombre;
+  if (mod.nombre.includes('_')) {
+    const parts = mod.nombre.split('_');
+    num = parts[0].trim();
+    titulo = parts.slice(1).join('_').trim();
+  }
+  
+  document.getElementById('themes-title').innerHTML = num 
+    ? `<span style="color:var(--a2); font-size:0.9rem; display:block; margin-bottom:4px; letter-spacing:1px;">${num}</span>${titulo}`
+    : titulo;
+  
+  const container = document.getElementById('themes-container');
+  if (mod.temas && mod.temas.length > 0) {
+    let tabsHtml = `<div class="tema-tabs-container">`;
+    tabsHtml += `<select class="tema-select-mob" onchange="switchTemaTab(this.value)">`;
+    let deskTabsHtml = `<div class="tema-tabs-desk">`;
+    let contentHtml = `<div class="tema-contents" style="width: 100%;">`;
+
+    mod.temas.forEach((tema, idx) => {
+        let filename = tema.titulo.replace('.pdf', '').replace('.PDF', '');
+        let themeMatch = filename.match(/TEMA \d+/i);
+        let themeNum = themeMatch ? themeMatch[0] : "TEMA";
+        let cleanName = filename.replace(/TEMA \d+\.\s*/i, '').trim();
+        
+        let isActive = idx === 0;
+        let bgTab = isActive ? 'var(--cel)' : 'transparent';
+        let colorTab = isActive ? 'var(--a2)' : 'var(--m)';
+
+        tabsHtml += `<option value="${idx}">${themeNum} - ${cleanName}</option>`;
+        deskTabsHtml += `<button class="tema-tab" id="tab-btn-${idx}" onclick="switchTemaTab(${idx})" style="white-space: normal; line-height: 1.3; padding: 0.6rem 1.2rem; border-radius: 20px; border: 1.5px solid var(--a2); background: ${bgTab}; color: ${colorTab}; font-weight: 700; cursor: pointer; transition: 0.2s;">${themeNum} - ${cleanName}</button>`;
+
+          let lockHtml = `<div style="position: absolute; top: 0; left: 0; width: 100%; height: 180px; background: rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center; backdrop-filter: blur(2px);"><span style="font-size: 3rem;">🔒</span></div>`;
+          
+          let planCard = tema.planificacion 
+            ? `<div class="res-card" onclick="openPdf(event, '${tema.planificacion}')" style="background: var(--card2); border-radius: 16px; overflow: hidden; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; text-align: center; border: 1px solid var(--b);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.5)'" onmouseout="this.style.transform='none'; this.style.boxShadow='none'">`
+            : `<div class="res-card" style="background: var(--card2); border-radius: 16px; overflow: hidden; text-align: center; border: 1px solid var(--b); position: relative; opacity: 0.7;">${lockHtml}`;
+
+          let pdfCard = tema.pdf 
+            ? `<div class="res-card" onclick="openPdf(event, '${tema.pdf}')" style="background: var(--card2); border-radius: 16px; overflow: hidden; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; text-align: center; border: 1px solid var(--b);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.5)'" onmouseout="this.style.transform='none'; this.style.boxShadow='none'">`
+            : `<div class="res-card" style="background: var(--card2); border-radius: 16px; overflow: hidden; text-align: center; border: 1px solid var(--b); position: relative; opacity: 0.7;">${lockHtml}`;
+            
+          let videoCard = tema.video 
+            ? `<div class="res-card" onclick="openPdf(event, '${tema.video}')" style="background: var(--card2); border-radius: 16px; overflow: hidden; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; text-align: center; border: 1px solid var(--b);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.5)'" onmouseout="this.style.transform='none'; this.style.boxShadow='none'">`
+            : `<div class="res-card" style="background: var(--card2); border-radius: 16px; overflow: hidden; text-align: center; border: 1px solid var(--b); position: relative; opacity: 0.7;">${lockHtml}`;
+
+          let audioCard = tema.audio 
+            ? `<div class="res-card" onclick="openAudio(event, '${tema.audio}', '${cleanName}', '${tema.imagen || ''}')" style="background: var(--card2); border-radius: 16px; overflow: hidden; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; text-align: center; border: 1px solid var(--b);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.5)'" onmouseout="this.style.transform='none'; this.style.boxShadow='none'">`
+            : `<div class="res-card" style="background: var(--card2); border-radius: 16px; overflow: hidden; text-align: center; border: 1px solid var(--b); position: relative; opacity: 0.7;">${lockHtml}`;
+
+          let pptCard = tema.presentacion 
+            ? `<div class="res-card" onclick="openPdf(event, '${tema.presentacion}')" style="background: var(--card2); border-radius: 16px; overflow: hidden; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; text-align: center; border: 1px solid var(--b);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.5)'" onmouseout="this.style.transform='none'; this.style.boxShadow='none'">`
+            : `<div class="res-card" style="background: var(--card2); border-radius: 16px; overflow: hidden; text-align: center; border: 1px solid var(--b); position: relative; opacity: 0.7;">${lockHtml}`;
+
+          let evalCard = tema.evaluacion 
+            ? `<div class="res-card" onclick="window.open('${tema.evaluacion}', '_blank')" style="background: var(--card2); border-radius: 16px; overflow: hidden; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; text-align: center; border: 1px solid var(--b);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.5)'" onmouseout="this.style.transform='none'; this.style.boxShadow='none'">`
+            : `<div class="res-card" style="background: var(--card2); border-radius: 16px; overflow: hidden; text-align: center; border: 1px solid var(--b); position: relative; opacity: 0.7;">${lockHtml}`;
+
+        contentHtml += `
+          <div class="tema-content-pane" id="tema-content-${idx}" style="display: ${isActive ? 'block' : 'none'}; width: 100%;">
+            <div class="theme-resources">
+              
+              <!-- Planificación -->
+              ${planCard}
+                <img src="images/Planificacion del Profesor.png" onerror="this.src='images/sistemas.png'" alt="Planificación" style="width: 100%; height: 180px; object-fit: cover; border-bottom: 2px solid var(--a2);">
+                <div style="padding: 1.2rem; font-size: 1.3rem; font-weight: 800; color: #fff;">Planificación</div>
+              </div>
+
+              <!-- Teoría (PDF) -->
+              ${pdfCard}
+                <img src="${tema.imagen ? resolvePath(tema.imagen) : 'images/Teoria.png'}" onerror="this.src='images/sistemas.png'" alt="Teoría" style="width: 100%; height: 180px; object-fit: cover; border-bottom: 2px solid var(--a2);">
+                <div style="padding: 1.2rem; font-size: 1.3rem; font-weight: 800; color: #fff;">Teoría</div>
+              </div>
+
+              <!-- Video -->
+              ${videoCard}
+                <img src="images/Video.png" onerror="this.src='images/sistemas.png'" alt="Video" style="width: 100%; height: 180px; object-fit: cover; border-bottom: 2px solid var(--a2);">
+                <div style="padding: 1.2rem; font-size: 1.3rem; font-weight: 800; color: #fff;">Video</div>
+              </div>
+
+              <!-- Audio -->
+              ${audioCard}
+                <img src="images/Audio.png" onerror="this.src='images/sistemas.png'" alt="Audio" style="width: 100%; height: 180px; object-fit: cover; border-bottom: 2px solid var(--a2);">
+                <div style="padding: 1.2rem; font-size: 1.3rem; font-weight: 800; color: #fff;">Audio</div>
+              </div>
+
+              <!-- Presentación -->
+              ${pptCard}
+                <img src="images/Presentacion.png" onerror="this.src='images/sistemas.png'" alt="Presentación" style="width: 100%; height: 180px; object-fit: cover; border-bottom: 2px solid var(--a2);">
+                <div style="padding: 1.2rem; font-size: 1.3rem; font-weight: 800; color: #fff;">Presentación</div>
+              </div>
+
+              <!-- Evaluación -->
+              ${evalCard}
+                <img src="images/Evaluacion.png" onerror="this.src='images/sistemas.png'" alt="Evaluación" style="width: 100%; height: 180px; object-fit: cover; border-bottom: 2px solid var(--a2);">
+                <div style="padding: 1.2rem; font-size: 1.3rem; font-weight: 800; color: #fff;">Evaluación</div>
+              </div>
+
+            </div>
+          </div>`;
+    });
+
+    tabsHtml += `</select>` + deskTabsHtml + `</div></div>`;
+    contentHtml += `</div>`;
+    
+    container.innerHTML = tabsHtml + contentHtml;
+  } else {
+    container.innerHTML = `<p style="text-align:center;color:var(--m);font-size:1.1rem;padding:2rem;">Próximamente...<br><span style="font-size:0.9rem;opacity:0.7;">No hay temas subidos para este módulo aún.</span></p>`;
+  }
+  
+  document.getElementById('themes-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeThemes() {
+  document.getElementById('themes-modal').classList.remove('open');
+  document.body.style.overflow = 'auto';
+}
+
+window.switchTemaTab = function(idx) {
+  idx = parseInt(idx);
+  document.querySelectorAll('.tema-tab').forEach(b => {
+    b.style.background = 'transparent';
+    b.style.color = 'var(--m)';
+  });
+  const btn = document.getElementById('tab-btn-' + idx);
+  if (btn) {
+    btn.style.background = 'var(--cel)';
+    btn.style.color = 'var(--a2)';
+  }
+  
+  const sel = document.querySelector('.tema-select-mob');
+  if (sel && sel.value != idx) sel.value = idx;
+  
+  document.querySelectorAll('.tema-content-pane').forEach(el => el.style.display = 'none');
+  const c = document.getElementById('tema-content-' + idx);
+  if (c) c.style.display = 'block';
+}
+
+function openPdf(e, url, title) {
+  if (e) { e.preventDefault(); e.stopPropagation(); }
+  if(!url || url === '#') return;
+  
+  // Ocultar modal de temas y el contenido principal
+  document.getElementById('themes-modal').classList.remove('open');
+  document.getElementById('main-content-section').style.display = 'none';
+  document.body.style.overflow = 'hidden'; // Bloquear el scroll de la página
+  
+  // Cambiar boton de la barra superior
+  const btnInicio = document.getElementById('btn-back-inicio');
+  if (btnInicio) btnInicio.style.display = 'none';
+  const btnTemas = document.getElementById('btn-back-temas');
+  if (btnTemas) btnTemas.style.display = 'inline-block';
+  
+  // Transformar el enlace a modo preview para Google Drive
+  let embedUrl = url;
+  if (embedUrl.includes('/view')) {
+    embedUrl = embedUrl.replace(/\/view.*/, '/preview');
+  }
+  
+  // Mostrar sección PDF
+  document.getElementById('pdf-view-section').style.display = 'flex';
+  document.getElementById('pdf-frame-full').src = embedUrl;
+}
+
+function openAudio(e, url, title, imgUrl) {
+  if (e) { e.preventDefault(); e.stopPropagation(); }
+  if(!url || url === '#') return;
+  
+  // Transformar el enlace a modo preview para Google Drive
+  let embedUrl = url;
+  if (embedUrl.includes('/view')) {
+    embedUrl = embedUrl.replace(/\/view.*/, '/preview');
+  }
+  
+  document.getElementById('themes-modal').classList.remove('open');
+  document.getElementById('main-content-section').style.display = 'none';
+  document.body.style.overflow = 'hidden';
+  
+  const btnInicio = document.getElementById('btn-back-inicio');
+  if (btnInicio) btnInicio.style.display = 'none';
+  const btnTemas = document.getElementById('btn-back-temas');
+  if (btnTemas) btnTemas.style.display = 'inline-block';
+  
+  document.getElementById('audio-view-section').style.display = 'flex';
+  document.getElementById('audio-title').textContent = title || 'Audio';
+  
+  const cover = document.getElementById('audio-cover');
+  if (imgUrl) cover.src = resolvePath(imgUrl);
+  else cover.src = 'images/Audio.png';
+  
+  const player = document.getElementById('custom-audio-player');
+  player.src = embedUrl;
+}
+
+function closePdfView() {
+  // Ocultar sección PDF
+  document.getElementById('pdf-view-section').style.display = 'none';
+  document.getElementById('pdf-frame-full').src = '';
+  
+  // Ocultar sección Audio y pausar
+  const audioSection = document.getElementById('audio-view-section');
+  if (audioSection) {
+    audioSection.style.display = 'none';
+    const player = document.getElementById('custom-audio-player');
+    if (player) { player.src = ''; }
+  }
+  
+  // Restaurar boton de la barra superior
+  const btnTemas = document.getElementById('btn-back-temas');
+  if (btnTemas) btnTemas.style.display = 'none';
+  const btnInicio = document.getElementById('btn-back-inicio');
+  if (btnInicio) btnInicio.style.display = 'inline-block';
+  
+  // Restaurar contenido principal y reabrir modal
+  document.getElementById('main-content-section').style.display = 'block';
+  document.getElementById('themes-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  if (typeof CARATULAS_DB !== 'undefined') {
+    renderTabs();
+    renderMods();
+  } else {
+    document.getElementById('mods-area').innerHTML = `<p style="text-align:center;color:red;grid-column:1/-1;">Error: No se pudo cargar la base de datos de carátulas.</p>`;
+  }
+});
+</script>
+
+</body>
+</html>
