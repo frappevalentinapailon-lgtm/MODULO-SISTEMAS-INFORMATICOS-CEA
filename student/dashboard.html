@@ -596,6 +596,21 @@ function openPdf(e, url, title) {
   let embedUrl = url;
   if (embedUrl.includes('/view')) {
     embedUrl = embedUrl.replace(/\/view.*/, '/preview');
+  } else if (embedUrl.endsWith('.pdf')) {
+    // Si es ruta relativa desde la BD, subir un nivel porque estamos dentro de /student/
+    if (embedUrl.startsWith('pdfs/')) {
+      embedUrl = '../' + embedUrl;
+    }
+    
+    // Si es un celular, usamos el visor de Google Docs
+    let isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    let isLiveServer = window.location.protocol.startsWith('http') && !window.location.hostname.includes('localhost') && !window.location.hostname.includes('127.0.0.1');
+    if (isMobile && isLiveServer) {
+      let a = document.createElement('a');
+      a.href = embedUrl; // Resuelve ../ automáticamente
+      let absoluteUrl = a.href;
+      embedUrl = 'https://docs.google.com/gview?url=' + encodeURIComponent(absoluteUrl) + '&embedded=true';
+    }
   }
   
   // Mostrar sección PDF
